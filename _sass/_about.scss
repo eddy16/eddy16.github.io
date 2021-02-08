@@ -45,25 +45,32 @@
   }
 }
 
-.user-img {
+.circular--landscape {
   display: inline-block;
-  width: 150px;
-  height: 150px;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
   border-radius: 50%;
-
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
 }
 
-.one {
-  background-image: url('http://placehold.it/400x200');
+.circular--landscape img {
+  width: auto;
+  height: 100%;
+  margin-left: -50px;
 }
 
-.dot {
-  height: 25px;
-  width: 25px;
-  background-color: #bbb;
+.circular--portrait {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
   border-radius: 50%;
-  display: inline-block;
+  margin: 0 auto;
+}
+
+.circular--portrait img {
+  width: 100%;
+  height: auto;
+  margin-top: -30px;
 }
