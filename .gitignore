@@ -1,6 +1,3 @@
-.sass-cache/
-.jekyll-metadata
-node_modules
-.vscode
-_site/
-Gemfile.Lock
+node_modules/
+.env
+docs/

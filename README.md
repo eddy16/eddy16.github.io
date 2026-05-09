@@ -1,94 +1,52 @@
-# Jekyll Resume Theme
+# Edgar Cirilo — Personal Portfolio
 
-Live demo at https://jekyll-theme-minimal-resume.netlify.com/
+A minimal personal portfolio site built with Node.js, Express, and EJS. All content is driven by `config.yml`. Deploys as a static site to GitHub Pages via the `docs/` folder.
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/24d80ae8-c3d9-4645-a6d8-9e97fc8dec3c/deploy-status)](https://app.netlify.com/sites/jekyll-theme-minimal-resume/deploys)
+## Prerequisites
 
-# Stack
+- Node.js 18+
 
-![](https://img.shields.io/badge/jekyll-✓-blue.svg)
-![](https://img.shields.io/badge/html5-✓-blue.svg)
-![](https://img.shields.io/badge/sass-✓-blue.svg)
-![](https://img.shields.io/badge/sweet--scroll-✓-blue.svg)
-![](https://img.shields.io/badge/particle--js-✓-blue.svg)
-![](https://img.shields.io/badge/font--awesome-✓-blue.svg)
-![](https://img.shields.io/badge/devicon-✓-blue.svg)
-![](https://img.shields.io/badge/gulp-✓-blue.svg)
+## Install
 
-***
-
-<h3 align="center">Please help this repo with a :star: if you find it useful! :blush:</h3>
-
-***
-
-# Screenshot
-
-<p align="center">
-  <img src="https://github.com/murraco/jekyll-theme-minimal-resume/blob/master/screenshot.png" width="90%" />
-</p>
-
-# Quick Setup
-
-1. Install Jekyll: `gem install jekyll bundler`
-2. Fork this repository and clone your fork
-3. Edit `_config.yml` to personalize your site
-
-# Settings
-
-You have to fill some informations on `_config.yml` to customize your site:
-
-## Site settings
-```yml
-description: A blog about lorem ipsum dolor sit amet
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://localhost:3000" # the base hostname & protocol for your site
+```bash
+npm install
 ```
 
-## User settings
-```yml
-username: Lorem Ipsum
-user_description: Software Engineer at Lorem Ipsum Dolor
-user_title: Mauricio Urraco
-email: mauriurraco@gmail.com
+## Development
+
+```bash
+npm run dev
 ```
 
-> Don't forget to change your URL before you deploy your site!
+Opens the site at `http://localhost:4000` with live reload. Edit any file in `views/`, `public/`, or `config.yml` and the browser refreshes automatically.
 
-# Color and Particle Customization
+## Production build
 
-- Color Customization
-  - Edit the `.sass` variables
-- Particle Customization
-  - Edit the json data in particle function in `app.js`
-  - Refer to `Particle.js` for help
-
-# Content
-
-You can (and should) edit the `.html` files for adding your own information, icons, working experience, social links or whatever you want to add. I.e.:
-
-```html
-<a aria-label="My Github" target="_blank" href="https://github.com/murraco">
-  <i class="icon fa fa-github-alt" aria-hidden="true"></i>
-</a>
+```bash
+npm run build
 ```
 
-# Running locally
+Renders all templates and copies assets into `docs/`. The result is a fully self-contained static site — open `docs/index.html` directly in a browser or deploy it anywhere.
 
-In order to compile the assets and run `Jekyll` locally you need to follow those steps:
+To update content: edit `config.yml`, then run `npm run build` again.
 
-1. Install Jekyll
-2. Run `jekyll build`
-3. Start and http-server in the folder `_site`
+## Deploy to GitHub Pages
 
-# Contribution
+1. Run `npm run build`
+2. Commit and push the `docs/` folder to the `master` branch
+3. In your GitHub repo go to **Settings → Pages**
+4. Set source to **Deploy from a branch**, branch: `master`, folder: `/docs`
+5. Your site will be live at `https://eddy16.github.io`
 
-- Report issues
-- Open pull request with improvements
-- Spread the word
-- Reach out to me directly at <mauriurraco@gmail.com>
+## Customisation
 
-# Donate
+All personal data lives in `config.yml`:
 
-`btc: 36V7HqqENSKn6iFCBuE4iCdtB29uGoCKzN`
-
-`eth: 0xB419E3E9fa2233383E0877d442e55C34B9C944dD`
+| Section | What it controls |
+|---------|-----------------|
+| `site` | Page title and meta description |
+| `profile` | Name, job title, bio text, photo path |
+| `contact` | Email and social media links |
+| `nav` | Navigation links in the hero |
+| `skills` | Bullet list in the "What I can do" column |
+| `footer` | Tagline text below the copyright |

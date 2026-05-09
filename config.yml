@@ -1,0 +1,46 @@
+# ── Site ──────────────────────────────────────────────────
+site:
+  title: "Edgar Cirilo"
+  description: "Personal portfolio and resume of Edgar Cirilo, Software Engineer."
+  lang: "en"
+
+# ── Hero / personal ───────────────────────────────────────
+profile:
+  name: "Edgar Cirilo"
+  title: "Software Engineer"
+  bio: >
+    Software Engineer with wide experience in backend development
+    especially with Java and Spring framework stack. Over 5 years
+    making high scalable and cloud native applications. Proactive,
+    curious, goal oriented and a very good team player.
+  # Relative path — works on dev server and as a static file
+  photo: "images/profile.png"
+
+# ── Social / contact ──────────────────────────────────────
+contact:
+  email: "edgarciriloglez@gmail.com"
+  instagram: "https://www.instagram.com/username"
+  twitter: "https://twitter.com/username"
+  linkedin: "https://www.linkedin.com/in/username"
+  github: "https://github.com/eddy16"
+
+# ── Navigation links (below icon row in hero) ─────────────
+nav:
+  - label: "About Me"
+    href: "#about"
+  - label: "Blog"
+    href: "https://dev.to/username"
+  - label: "Resume"
+    href: "#about"
+
+# ── Skills list (right column of about section) ───────────
+skills:
+  - "Design Software Architecture"
+  - "Design Software Implementation"
+  - "Code Software Solutions"
+  - "Lead High Impact Development teams"
+  - "Work as a great team player"
+
+# ── Footer ────────────────────────────────────────────────
+footer:
+  tagline: "Work in progress ☕"
