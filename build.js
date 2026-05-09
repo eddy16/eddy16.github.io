@@ -8,7 +8,8 @@ const ROOT   = __dirname;
 const DOCS   = path.join(ROOT, 'docs');
 const PUBLIC = path.join(ROOT, 'public');
 
-const config = yaml.load(fs.readFileSync(path.join(ROOT, 'config.yml'), 'utf8'));
+const CONFIG_NAME = fs.existsSync(path.join(ROOT, 'config.prod.yml')) ? 'config.prod.yml' : 'config.yml';
+const config = yaml.load(fs.readFileSync(path.join(ROOT, CONFIG_NAME), 'utf8'));
 
 fs.rmSync(DOCS, { recursive: true, force: true });
 fs.mkdirSync(DOCS, { recursive: true });
