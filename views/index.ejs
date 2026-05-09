@@ -10,7 +10,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Antic+Slab&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -20,74 +20,323 @@
 </head>
 <body>
 
-  <div id="particles-js">
-    <div class="header">
-      <h1>
-        <span class="site-title"><%= config.profile.name %></span>
-        <span class="site-description"><%= config.profile.title %></span>
-      </h1>
+  <!-- ── Sticky Nav ──────────────────────────────────────── -->
+  <nav id="nav">
+    <a class="nav-brand" href="#hero"><%= config.profile.name %></a>
+    <ul class="nav-links">
+      <% config.nav.forEach(function(item) { %>
+        <li><a href="<%= item.href %>"><%= item.label %></a></li>
+      <% }); %>
+    </ul>
+  </nav>
 
-      <div class="header-icons">
-        <a aria-label="Send email" href="mailto:<%= config.contact.email %>">
-          <i class="icon fa-solid fa-envelope"></i>
-        </a>
-        <a aria-label="My Instagram" target="_blank" rel="noopener" href="<%= config.contact.instagram %>">
-          <i class="icon fa-brands fa-instagram" aria-hidden="true"></i>
-        </a>
-        <a aria-label="My Twitter" target="_blank" rel="noopener" href="<%= config.contact.twitter %>">
-          <i class="icon fa-brands fa-twitter" aria-hidden="true"></i>
-        </a>
-        <a aria-label="My LinkedIn" target="_blank" rel="noopener" href="<%= config.contact.linkedin %>">
-          <i class="icon fa-brands fa-linkedin" aria-hidden="true"></i>
-        </a>
-        <a aria-label="My GitHub" target="_blank" rel="noopener" href="<%= config.contact.github %>">
-          <i class="icon fa-brands fa-github" aria-hidden="true"></i>
-        </a>
-      </div>
+  <!-- ── Hero ───────────────────────────────────────────── -->
+  <section id="hero">
+    <div class="hero-inner">
 
-      <div class="header-links">
-        <% config.nav.forEach(function(item) { %>
-          <a class="link" href="<%= item.href %>"><%= item.label %></a>
-        <% }); %>
-      </div>
-    </div>
+      <!-- Left: text content -->
+      <div class="hero-content">
+        <p class="hero-label"><%= config.profile.title %></p>
+        <h1 class="hero-name"><%= config.profile.name %></h1>
+        <p class="hero-summary"><%= config.profile.summary %></p>
 
-    <a class="down" href="#about">
-      <i class="icon fa-solid fa-chevron-down" aria-hidden="true"></i>
-    </a>
-  </div>
+        <div class="hero-ctas">
+          <a href="#resume" class="btn btn-primary">View Resume</a>
+          <a href="#contact" class="btn btn-outline">Contact</a>
+        </div>
 
-  <section id="about">
-    <div class="user-details">
-      <h1>Profile</h1>
-    </div>
-    <div class="user">
-      <div class="tech">
-        <h2>About me</h2>
-        <p><%= config.profile.bio %></p>
-      </div>
-      <div class="tech">
-        <div class="circular--portrait">
-          <img src="<%= config.profile.photo %>" alt="<%= config.profile.name %>">
+        <div class="hero-social">
+          <a href="mailto:<%= config.contact.email %>" aria-label="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="<%= config.contact.linkedin %>" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a href="<%= config.contact.github %>" target="_blank" rel="noopener" aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="<%= config.contact.twitter %>" target="_blank" rel="noopener" aria-label="Twitter">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+          <a href="<%= config.contact.instagram %>" target="_blank" rel="noopener" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
         </div>
       </div>
-      <div class="tech">
-        <h2>What I can do</h2>
-        <ul>
-          <% config.skills.forEach(function(skill) { %>
-            <li><%= skill %></li>
-          <% }); %>
-        </ul>
+
+      <!-- Right: architecture diagram -->
+      <div class="hero-diagram">
+        <div class="arch-panel">
+
+          <div class="arch-panel-header">
+            <div class="arch-panel-dots">
+              <span class="dot-red"></span>
+              <span class="dot-yellow"></span>
+              <span class="dot-green"></span>
+            </div>
+            <span class="arch-panel-title">system.architecture</span>
+          </div>
+
+          <div class="arch-panel-body">
+            <svg viewBox="0 0 340 430" xmlns="http://www.w3.org/2000/svg"
+                 aria-label="Cloud architecture diagram showing request flow through Client, API Gateway, Auth, Microservices, Event Queue, Data Layer, AI/ML, and Cloud Infrastructure"
+                 role="img">
+
+              <defs>
+                <path id="p-c-gw"    d="M 170 74  L 170 111"/>
+                <path id="p-gw-auth" d="M 152 148 L 82  196"/>
+                <path id="p-gw-svc"  d="M 170 148 L 170 196"/>
+                <path id="p-gw-q"    d="M 188 148 L 260 196"/>
+                <path id="p-auth-db" d="M 65  234 L 78  286"/>
+                <path id="p-svc-db"  d="M 152 234 L 94  286"/>
+                <path id="p-svc-ml"  d="M 188 234 L 252 286"/>
+                <path id="p-q-ml"    d="M 277 234 L 270 286"/>
+                <path id="p-db-cloud"  d="M 82  324 L 150 366"/>
+                <path id="p-ml-cloud"  d="M 266 324 L 190 366"/>
+              </defs>
+
+              <!-- Static connection lines -->
+              <g stroke="rgba(245,158,11,0.18)" stroke-width="1.5" fill="none" stroke-dasharray="4 3">
+                <line x1="170" y1="74"  x2="170" y2="111"/>
+                <line x1="152" y1="148" x2="82"  y2="196"/>
+                <line x1="170" y1="148" x2="170" y2="196"/>
+                <line x1="188" y1="148" x2="260" y2="196"/>
+                <line x1="65"  y1="234" x2="78"  y2="286"/>
+                <line x1="152" y1="234" x2="94"  y2="286"/>
+                <line x1="188" y1="234" x2="252" y2="286"/>
+                <line x1="277" y1="234" x2="270" y2="286"/>
+                <line x1="82"  y1="324" x2="150" y2="366"/>
+                <line x1="266" y1="324" x2="190" y2="366"/>
+              </g>
+
+              <!-- Animated data packets -->
+              <g fill="#F59E0B">
+                <circle r="3.5" opacity="0.95">
+                  <animateMotion dur="1.4s" repeatCount="indefinite" begin="0s"><mpath href="#p-c-gw"/></animateMotion></circle>
+                <circle r="3.5" opacity="0.55">
+                  <animateMotion dur="1.4s" repeatCount="indefinite" begin="0.7s"><mpath href="#p-c-gw"/></animateMotion></circle>
+
+                <circle r="3.5" opacity="0.95">
+                  <animateMotion dur="1.6s" repeatCount="indefinite" begin="0.3s"><mpath href="#p-gw-svc"/></animateMotion></circle>
+                <circle r="3.5" opacity="0.55">
+                  <animateMotion dur="1.6s" repeatCount="indefinite" begin="1.1s"><mpath href="#p-gw-svc"/></animateMotion></circle>
+
+                <circle r="3" opacity="0.7">
+                  <animateMotion dur="2s" repeatCount="indefinite" begin="0.5s"><mpath href="#p-gw-auth"/></animateMotion></circle>
+
+                <circle r="3" opacity="0.7">
+                  <animateMotion dur="2.2s" repeatCount="indefinite" begin="0.9s"><mpath href="#p-gw-q"/></animateMotion></circle>
+
+                <circle r="3.5" opacity="0.95">
+                  <animateMotion dur="1.8s" repeatCount="indefinite" begin="0.4s"><mpath href="#p-svc-db"/></animateMotion></circle>
+
+                <circle r="3" opacity="0.75">
+                  <animateMotion dur="2.4s" repeatCount="indefinite" begin="1.2s"><mpath href="#p-svc-ml"/></animateMotion></circle>
+
+                <circle r="3" opacity="0.6">
+                  <animateMotion dur="2s" repeatCount="indefinite" begin="0.8s"><mpath href="#p-auth-db"/></animateMotion></circle>
+
+                <circle r="3" opacity="0.7">
+                  <animateMotion dur="2.2s" repeatCount="indefinite" begin="1.5s"><mpath href="#p-q-ml"/></animateMotion></circle>
+
+                <circle r="3.5" opacity="0.95">
+                  <animateMotion dur="1.6s" repeatCount="indefinite" begin="0.6s"><mpath href="#p-db-cloud"/></animateMotion></circle>
+
+                <circle r="3.5" opacity="0.95">
+                  <animateMotion dur="1.6s" repeatCount="indefinite" begin="1.0s"><mpath href="#p-ml-cloud"/></animateMotion></circle>
+              </g>
+
+              <!-- Nodes -->
+              <g font-family="JetBrains Mono, monospace" text-anchor="middle">
+
+                <!-- Client (top — amber highlight, entry point) -->
+                <rect x="141" y="36" width="58" height="38" rx="8"
+                      fill="#1C2128" stroke="rgba(245,158,11,0.4)" stroke-width="1"/>
+                <text x="170" y="59" font-size="11" font-weight="500" fill="#F59E0B">Client</text>
+                <text x="170" y="90" font-size="8.5" fill="#8B949E">Browser / Mobile</text>
+
+                <!-- API Gateway -->
+                <rect x="141" y="111" width="58" height="38" rx="8"
+                      fill="#1C2128" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+                <text x="170" y="134" font-size="10.5" font-weight="500" fill="#E6EDF3">API GW</text>
+                <text x="170" y="165" font-size="8.5" fill="#8B949E">Gateway</text>
+
+                <!-- Auth / IAM -->
+                <rect x="36" y="196" width="58" height="38" rx="8"
+                      fill="#1C2128" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                <text x="65" y="219" font-size="10.5" font-weight="500" fill="#E6EDF3">Auth</text>
+                <text x="65" y="250" font-size="8.5" fill="#8B949E">IAM</text>
+
+                <!-- Microservices -->
+                <rect x="141" y="196" width="58" height="38" rx="8"
+                      fill="#1C2128" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+                <text x="170" y="219" font-size="10.5" font-weight="500" fill="#E6EDF3">SVC</text>
+                <text x="170" y="250" font-size="8.5" fill="#8B949E">Microservices</text>
+
+                <!-- Event Queue -->
+                <rect x="248" y="196" width="58" height="38" rx="8"
+                      fill="#1C2128" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                <text x="277" y="219" font-size="10.5" font-weight="500" fill="#E6EDF3">Queue</text>
+                <text x="277" y="250" font-size="8.5" fill="#8B949E">Events</text>
+
+                <!-- Data Layer -->
+                <rect x="51" y="286" width="58" height="38" rx="8"
+                      fill="#1C2128" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                <text x="80" y="309" font-size="10.5" font-weight="500" fill="#E6EDF3">DB</text>
+                <text x="80" y="340" font-size="8.5" fill="#8B949E">Data Layer</text>
+
+                <!-- AI / ML -->
+                <rect x="239" y="286" width="58" height="38" rx="8"
+                      fill="#1C2128" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                <text x="268" y="309" font-size="10.5" font-weight="500" fill="#E6EDF3">AI / ML</text>
+                <text x="268" y="340" font-size="8.5" fill="#8B949E">Inference</text>
+
+                <!-- Cloud Infra (bottom — amber highlight, exit point) -->
+                <rect x="141" y="366" width="58" height="38" rx="8"
+                      fill="#1C2128" stroke="rgba(245,158,11,0.4)" stroke-width="1"/>
+                <text x="170" y="389" font-size="10.5" font-weight="500" fill="#F59E0B">Cloud</text>
+                <text x="170" y="416" font-size="8.5" fill="#8B949E">Infrastructure</text>
+              </g>
+
+            </svg>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- .hero-inner -->
+
+    <a class="scroll-down" href="#about" aria-label="Scroll to about section">
+      <i class="fa-solid fa-chevron-down"></i>
+    </a>
+  </section>
+
+  <!-- ── About ──────────────────────────────────────────── -->
+  <section id="about" data-reveal>
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-number">01</span>
+        <h2 class="section-title">About Me</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-photo">
+          <img src="<%= config.profile.photo %>" alt="<%= config.profile.name %>">
+        </div>
+
+        <div class="about-body">
+          <p class="about-bio"><%= config.about.description %></p>
+
+          <dl class="facts-grid">
+            <% config.about.facts.forEach(function(fact) { %>
+              <div class="fact-item">
+                <dt class="fact-label"><%= fact.label %></dt>
+                <dd class="fact-value"><%= fact.value %></dd>
+              </div>
+            <% }); %>
+          </dl>
+        </div>
       </div>
     </div>
   </section>
 
-  <footer class="footer">
-    <p>&copy; <%= config.profile.name %></p>
-    <p><%= config.footer.tagline %></p>
+  <!-- ── Skills ─────────────────────────────────────────── -->
+  <section id="skills" data-reveal>
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-number">02</span>
+        <h2 class="section-title">Skills</h2>
+      </div>
+
+      <div class="skills-grid">
+        <% config.skills.forEach(function(skill) { %>
+          <div class="skill-card">
+            <i class="skill-icon <%= skill.icon %>"></i>
+            <h3 class="skill-category"><%= skill.category %></h3>
+            <p class="skill-desc"><%= skill.description %></p>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Work / Resume ──────────────────────────────────── -->
+  <section id="resume" data-reveal>
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-number">03</span>
+        <h2 class="section-title">Work Experience</h2>
+      </div>
+
+      <div class="work-list">
+        <% config.work.forEach(function(job, index) { %>
+          <div class="work-item" id="work-<%= index %>">
+
+            <button class="work-row"
+                    aria-expanded="false"
+                    aria-controls="work-detail-<%= index %>">
+              <div class="work-meta">
+                <span class="work-company"><%= job.company %></span>
+                <span class="work-role"><%= job.role %></span>
+              </div>
+              <span class="work-dates"><%= job.dates %></span>
+              <i class="work-chevron fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </button>
+
+            <div class="work-detail" id="work-detail-<%= index %>" hidden>
+              <ul class="work-bullets">
+                <% job.details.forEach(function(bullet) { %>
+                  <li><%= bullet %></li>
+                <% }); %>
+              </ul>
+              <div class="work-tags">
+                <% job.tech.forEach(function(tag) { %>
+                  <span class="tag"><%= tag %></span>
+                <% }); %>
+              </div>
+            </div>
+
+          </div>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Contact / Footer ───────────────────────────────── -->
+  <footer id="contact">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-number">04</span>
+        <h2 class="section-title">Get In Touch</h2>
+      </div>
+
+      <div class="contact-body">
+        <a href="mailto:<%= config.contact.email %>" class="contact-email">
+          <%= config.contact.email %>
+        </a>
+
+        <div class="contact-social">
+          <a href="<%= config.contact.linkedin %>" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a href="<%= config.contact.github %>" target="_blank" rel="noopener" aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="<%= config.contact.twitter %>" target="_blank" rel="noopener" aria-label="Twitter">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+          <a href="<%= config.contact.instagram %>" target="_blank" rel="noopener" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-tagline"><%= config.footer.tagline %></p>
+        <p class="footer-copy">&copy; <%= new Date().getFullYear() %> <%= config.profile.name %></p>
+      </div>
+    </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

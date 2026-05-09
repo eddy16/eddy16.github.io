@@ -1,46 +1,132 @@
 # ── Site ──────────────────────────────────────────────────
 site:
-  title: "Edgar Cirilo"
-  description: "Personal portfolio and resume of Edgar Cirilo, Software Engineer."
+  title: "Your Name – Solutions Architect"
+  description: "Personal portfolio of a Solutions Architect specializing in cloud-native systems, multi-cloud architecture, and enterprise digital transformation."
   lang: "en"
 
-# ── Hero / personal ───────────────────────────────────────
+# ── Profile (hero) ────────────────────────────────────────
 profile:
-  name: "Edgar Cirilo"
-  title: "Software Engineer"
-  bio: >
-    Software Engineer with wide experience in backend development
-    especially with Java and Spring framework stack. Over 5 years
-    making high scalable and cloud native applications. Proactive,
-    curious, goal oriented and a very good team player.
+  name: "Your Name"
+  title: "Solutions Architect"
+  summary: >
+    I design resilient, cloud-native systems that bridge business
+    strategy with technical execution.
   # Relative path — works on dev server and as a static file
   photo: "images/profile.png"
 
+# ── About section ─────────────────────────────────────────
+about:
+  description: >
+    Solutions Architect with 8+ years of experience designing and delivering
+    enterprise-grade cloud systems across financial services, healthcare, and
+    SaaS. I partner with engineering and product leadership to translate
+    complex business requirements into scalable, secure, and cost-effective
+    architectures. Known for bridging technical depth with executive
+    communication — equally comfortable in a whiteboard session with engineers
+    and a quarterly business review with the C-suite.
+  facts:
+    - label: "Location"
+      value: "Lima, Peru"
+    - label: "Experience"
+      value: "8+ Years"
+    - label: "Specialization"
+      value: "Cloud Architecture"
+
 # ── Social / contact ──────────────────────────────────────
 contact:
-  email: "edgarciriloglez@gmail.com"
-  instagram: "https://www.instagram.com/username"
-  twitter: "https://twitter.com/username"
+  email: "yourname@example.com"
   linkedin: "https://www.linkedin.com/in/username"
-  github: "https://github.com/eddy16"
+  github: "https://github.com/username"
+  twitter: "https://twitter.com/username"
+  instagram: "https://www.instagram.com/username"
 
-# ── Navigation links (below icon row in hero) ─────────────
+# ── Navigation ────────────────────────────────────────────
 nav:
-  - label: "About Me"
+  - label: "About"
     href: "#about"
-  - label: "Blog"
-    href: "https://dev.to/username"
   - label: "Resume"
-    href: "#about"
+    href: "#resume"
+  - label: "Contact"
+    href: "#contact"
 
-# ── Skills list (right column of about section) ───────────
+# ── Skills (8 cards — 4×2 grid) ───────────────────────────
 skills:
-  - "Design Software Architecture"
-  - "Design Software Implementation"
-  - "Code Software Solutions"
-  - "Lead High Impact Development teams"
-  - "Work as a great team player"
+  - category: "Cloud Architecture"
+    icon: "fa-solid fa-cloud"
+    description: "AWS, Azure, GCP multi-cloud design patterns and IaC"
+
+  - category: "Solution Design"
+    icon: "fa-solid fa-diagram-project"
+    description: "End-to-end architecture from requirements to delivery"
+
+  - category: "Microservices"
+    icon: "fa-solid fa-cubes"
+    description: "Domain-driven design, service mesh, event-driven systems"
+
+  - category: "Security & Compliance"
+    icon: "fa-solid fa-shield-halved"
+    description: "Zero-trust, SOC 2, GDPR, cloud security posture"
+
+  - category: "Data Architecture"
+    icon: "fa-solid fa-database"
+    description: "Data lakes, streaming pipelines, analytical platforms"
+
+  - category: "DevOps & CI/CD"
+    icon: "fa-brands fa-docker"
+    description: "Kubernetes, Terraform, GitOps, observability stacks"
+
+  - category: "Stakeholder Communication"
+    icon: "fa-solid fa-people-group"
+    description: "Translating technical complexity for C-suite audiences"
+
+  - category: "API Design"
+    icon: "fa-solid fa-plug"
+    description: "REST, GraphQL, AsyncAPI, gateway patterns"
+
+# ── Work / Resume (accordion) ─────────────────────────────
+work:
+  - company: "Acme Cloud Services"
+    role: "Principal Solutions Architect"
+    dates: "2022 – Present"
+    details:
+      - "Led cloud migration for 40+ enterprise clients onto AWS and Azure, cutting infrastructure costs by 35%"
+      - "Designed multi-region active-active architecture serving 50M monthly active users"
+      - "Established Architecture Review Board practices adopted across the organization"
+    tech:
+      - "AWS"
+      - "Azure"
+      - "Terraform"
+      - "Kubernetes"
+      - "ArgoCD"
+
+  - company: "TechCorp Inc."
+    role: "Senior Solutions Architect"
+    dates: "2019 – 2022"
+    details:
+      - "Designed event-driven microservices platform replacing a legacy monolith (8 services → 60)"
+      - "Delivered SOC 2 Type II compliance architecture across three product lines"
+      - "Mentored a team of 6 engineers on cloud-native design patterns"
+    tech:
+      - "GCP"
+      - "Kafka"
+      - "Spring Boot"
+      - "PostgreSQL"
+      - "Istio"
+
+  - company: "StartupXYZ"
+    role: "Software Architect"
+    dates: "2016 – 2019"
+    details:
+      - "Built greenfield SaaS platform from 0 to 200k users in 18 months"
+      - "Introduced CI/CD pipeline reducing release cycle from 2 weeks to daily"
+      - "Architected real-time data pipeline processing 10M events per day"
+    tech:
+      - "AWS"
+      - "Node.js"
+      - "React"
+      - "MongoDB"
+      - "GitHub Actions"
 
 # ── Footer ────────────────────────────────────────────────
 footer:
-  tagline: "Work in progress ☕"
+  tagline: "Designed with precision. Built to last."
