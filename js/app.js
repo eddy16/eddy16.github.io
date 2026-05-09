@@ -1,60 +1,103 @@
+'use strict';
+
 document.addEventListener('DOMContentLoaded', function () {
-  particlesJS('particles-js', {
-    particles: {
-      number: {
-        value: 160,
-        density: { enable: true, value_area: 500 }
-      },
-      color: { value: '#ffffff' },
-      shape: {
-        type: 'circle',
-        stroke: { width: 0, color: '#000000' },
-        polygon: { nb_sides: 5 },
-        image: { src: 'img/github.svg', width: 100, height: 100 }
-      },
-      opacity: {
-        value: 1,
-        random: true,
-        anim: { enable: true, speed: 1, opacity_min: 0, sync: false }
-      },
-      size: {
-        value: 3,
-        random: true,
-        anim: { enable: false, speed: 4, size_min: 0.3, sync: false }
-      },
-      line_linked: {
-        enable: false,
-        distance: 150,
-        color: '#ffffff',
-        opacity: 0.4,
-        width: 1
-      },
-      move: {
-        enable: true,
-        speed: 1,
-        direction: 'none',
-        random: true,
-        straight: false,
-        out_mode: 'out',
-        bounce: false,
-        attract: { enable: false, rotateX: 600, rotateY: 600 }
-      }
-    },
-    interactivity: {
-      detect_on: 'canvas',
-      events: {
-        onhover: { enable: false, mode: 'bubble' },
-        onclick: { enable: false, mode: 'repulse' },
-        resize: true
-      },
-      modes: {
-        grab: { distance: 400, line_linked: { opacity: 1 } },
-        bubble: { distance: 250, size: 0, duration: 2, opacity: 0, speed: 3 },
-        repulse: { distance: 400, duration: 0.4 },
-        push: { particles_nb: 4 },
-        remove: { particles_nb: 2 }
-      }
-    },
-    retina_detect: true
-  });
+  initAccordion();
+  initScrollReveal();
+  initNavScroll();
+  initActiveNav();
 });
+
+function initAccordion() {
+  var workItems = document.querySelectorAll('.work-item');
+
+  workItems.forEach(function (item) {
+    var btn    = item.querySelector('.work-row');
+    var detail = item.querySelector('.work-detail');
+    if (!btn || !detail) return;
+
+    btn.addEventListener('click', function () {
+      var isOpen = item.classList.contains('is-open');
+
+      // Close all other items (single-open accordion)
+      workItems.forEach(function (other) {
+        if (other !== item && other.classList.contains('is-open')) {
+          closeItem(other);
+        }
+      });
+
+      if (isOpen) {
+        closeItem(item);
+      } else {
+        openItem(item);
+      }
+    });
+  });
+
+  function openItem(item) {
+    var detail = item.querySelector('.work-detail');
+    var btn    = item.querySelector('.work-row');
+    detail.removeAttribute('hidden');
+    item.classList.add('is-open');
+    btn.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeItem(item) {
+    var detail = item.querySelector('.work-detail');
+    var btn    = item.querySelector('.work-row');
+    item.classList.remove('is-open');
+    btn.setAttribute('aria-expanded', 'false');
+    detail.addEventListener('transitionend', function handler(e) {
+      if (e.propertyName === 'max-height') {
+        detail.setAttribute('hidden', '');
+        detail.removeEventListener('transitionend', handler);
+      }
+    });
+  }
+}
+
+function initScrollReveal() {
+  var elements = document.querySelectorAll('[data-reveal]');
+  if (!elements.length) return;
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  elements.forEach(function (el) { observer.observe(el); });
+}
+
+function initNavScroll() {
+  var nav = document.getElementById('nav');
+  if (!nav) return;
+
+  function onScroll() {
+    nav.classList.toggle('nav-scrolled', window.scrollY > 80);
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+}
+
+function initActiveNav() {
+  var sections = document.querySelectorAll('section[id], footer[id]');
+  var navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+  if (!sections.length || !navLinks.length) return;
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        var id = entry.target.getAttribute('id');
+        navLinks.forEach(function (link) {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+
+  sections.forEach(function (section) { observer.observe(section); });
+}

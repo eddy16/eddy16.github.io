@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Edgar Cirilo</title>
-  <meta name="description" content="Personal portfolio and resume of Edgar Cirilo, Software Engineer.">
+  <title>Your Name – Solutions Architect</title>
+  <meta name="description" content="Personal portfolio of a Solutions Architect specializing in cloud-native systems, multi-cloud architecture, and enterprise digital transformation.">
   <link rel="shortcut icon" type="image/png" href="favicon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Antic+Slab&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -20,87 +20,473 @@
 </head>
 <body>
 
-  <div id="particles-js">
-    <div class="header">
-      <h1>
-        <span class="site-title">Edgar Cirilo</span>
-        <span class="site-description">Software Engineer</span>
-      </h1>
+  <!-- ── Sticky Nav ──────────────────────────────────────── -->
+  <nav id="nav">
+    <a class="nav-brand" href="#hero">Your Name</a>
+    <ul class="nav-links">
+      
+        <li><a href="#about">About</a></li>
+      
+        <li><a href="#resume">Resume</a></li>
+      
+        <li><a href="#contact">Contact</a></li>
+      
+    </ul>
+  </nav>
 
-      <div class="header-icons">
-        <a aria-label="Send email" href="mailto:edgarciriloglez@gmail.com">
-          <i class="icon fa-solid fa-envelope"></i>
-        </a>
-        <a aria-label="My Instagram" target="_blank" rel="noopener" href="https://www.instagram.com/username">
-          <i class="icon fa-brands fa-instagram" aria-hidden="true"></i>
-        </a>
-        <a aria-label="My Twitter" target="_blank" rel="noopener" href="https://twitter.com/username">
-          <i class="icon fa-brands fa-twitter" aria-hidden="true"></i>
-        </a>
-        <a aria-label="My LinkedIn" target="_blank" rel="noopener" href="https://www.linkedin.com/in/username">
-          <i class="icon fa-brands fa-linkedin" aria-hidden="true"></i>
-        </a>
-        <a aria-label="My GitHub" target="_blank" rel="noopener" href="https://github.com/eddy16">
-          <i class="icon fa-brands fa-github" aria-hidden="true"></i>
-        </a>
-      </div>
+  <!-- ── Hero ───────────────────────────────────────────── -->
+  <section id="hero">
+    <div class="hero-inner">
 
-      <div class="header-links">
-        
-          <a class="link" href="#about">About Me</a>
-        
-          <a class="link" href="https://dev.to/username">Blog</a>
-        
-          <a class="link" href="#about">Resume</a>
-        
-      </div>
-    </div>
-
-    <a class="down" href="#about">
-      <i class="icon fa-solid fa-chevron-down" aria-hidden="true"></i>
-    </a>
-  </div>
-
-  <section id="about">
-    <div class="user-details">
-      <h1>Profile</h1>
-    </div>
-    <div class="user">
-      <div class="tech">
-        <h2>About me</h2>
-        <p>Software Engineer with wide experience in backend development especially with Java and Spring framework stack. Over 5 years making high scalable and cloud native applications. Proactive, curious, goal oriented and a very good team player.
+      <!-- Left: text content -->
+      <div class="hero-content">
+        <p class="hero-label">Solutions Architect</p>
+        <h1 class="hero-name">Your Name</h1>
+        <p class="hero-summary">I design resilient, cloud-native systems that bridge business strategy with technical execution.
 </p>
-      </div>
-      <div class="tech">
-        <div class="circular--portrait">
-          <img src="images/profile.png" alt="Edgar Cirilo">
+
+        <div class="hero-ctas">
+          <a href="#resume" class="btn btn-primary">View Resume</a>
+          <a href="#contact" class="btn btn-outline">Contact</a>
+        </div>
+
+        <div class="hero-social">
+          <a href="mailto:yourname@example.com" aria-label="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/username" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/username" target="_blank" rel="noopener" aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://twitter.com/username" target="_blank" rel="noopener" aria-label="Twitter">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+          <a href="https://www.instagram.com/username" target="_blank" rel="noopener" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
         </div>
       </div>
-      <div class="tech">
-        <h2>What I can do</h2>
-        <ul>
-          
-            <li>Design Software Architecture</li>
-          
-            <li>Design Software Implementation</li>
-          
-            <li>Code Software Solutions</li>
-          
-            <li>Lead High Impact Development teams</li>
-          
-            <li>Work as a great team player</li>
-          
-        </ul>
+
+      <!-- Right: architecture diagram -->
+      <div class="hero-diagram">
+        <div class="arch-panel">
+
+          <div class="arch-panel-header">
+            <div class="arch-panel-dots">
+              <span class="dot-red"></span>
+              <span class="dot-yellow"></span>
+              <span class="dot-green"></span>
+            </div>
+            <span class="arch-panel-title">system.architecture</span>
+          </div>
+
+          <div class="arch-panel-body">
+            <svg viewBox="0 0 340 430" xmlns="http://www.w3.org/2000/svg"
+                 aria-label="Cloud architecture diagram showing request flow through Client, API Gateway, Auth, Microservices, Event Queue, Data Layer, AI/ML, and Cloud Infrastructure"
+                 role="img">
+
+              <defs>
+                <path id="p-c-gw"    d="M 170 74  L 170 111"/>
+                <path id="p-gw-auth" d="M 152 148 L 82  196"/>
+                <path id="p-gw-svc"  d="M 170 148 L 170 196"/>
+                <path id="p-gw-q"    d="M 188 148 L 260 196"/>
+                <path id="p-auth-db" d="M 65  234 L 78  286"/>
+                <path id="p-svc-db"  d="M 152 234 L 94  286"/>
+                <path id="p-svc-ml"  d="M 188 234 L 252 286"/>
+                <path id="p-q-ml"    d="M 277 234 L 270 286"/>
+                <path id="p-db-cloud"  d="M 82  324 L 150 366"/>
+                <path id="p-ml-cloud"  d="M 266 324 L 190 366"/>
+              </defs>
+
+              <!-- Static connection lines -->
+              <g stroke="rgba(245,158,11,0.18)" stroke-width="1.5" fill="none" stroke-dasharray="4 3">
+                <line x1="170" y1="74"  x2="170" y2="111"/>
+                <line x1="152" y1="148" x2="82"  y2="196"/>
+                <line x1="170" y1="148" x2="170" y2="196"/>
+                <line x1="188" y1="148" x2="260" y2="196"/>
+                <line x1="65"  y1="234" x2="78"  y2="286"/>
+                <line x1="152" y1="234" x2="94"  y2="286"/>
+                <line x1="188" y1="234" x2="252" y2="286"/>
+                <line x1="277" y1="234" x2="270" y2="286"/>
+                <line x1="82"  y1="324" x2="150" y2="366"/>
+                <line x1="266" y1="324" x2="190" y2="366"/>
+              </g>
+
+              <!-- Animated data packets -->
+              <g fill="#F59E0B">
+                <circle r="3.5" opacity="0.95">
+                  <animateMotion dur="1.4s" repeatCount="indefinite" begin="0s"><mpath href="#p-c-gw"/></animateMotion></circle>
+                <circle r="3.5" opacity="0.55">
+                  <animateMotion dur="1.4s" repeatCount="indefinite" begin="0.7s"><mpath href="#p-c-gw"/></animateMotion></circle>
+
+                <circle r="3.5" opacity="0.95">
+                  <animateMotion dur="1.6s" repeatCount="indefinite" begin="0.3s"><mpath href="#p-gw-svc"/></animateMotion></circle>
+                <circle r="3.5" opacity="0.55">
+                  <animateMotion dur="1.6s" repeatCount="indefinite" begin="1.1s"><mpath href="#p-gw-svc"/></animateMotion></circle>
+
+                <circle r="3" opacity="0.7">
+                  <animateMotion dur="2s" repeatCount="indefinite" begin="0.5s"><mpath href="#p-gw-auth"/></animateMotion></circle>
+
+                <circle r="3" opacity="0.7">
+                  <animateMotion dur="2.2s" repeatCount="indefinite" begin="0.9s"><mpath href="#p-gw-q"/></animateMotion></circle>
+
+                <circle r="3.5" opacity="0.95">
+                  <animateMotion dur="1.8s" repeatCount="indefinite" begin="0.4s"><mpath href="#p-svc-db"/></animateMotion></circle>
+
+                <circle r="3" opacity="0.75">
+                  <animateMotion dur="2.4s" repeatCount="indefinite" begin="1.2s"><mpath href="#p-svc-ml"/></animateMotion></circle>
+
+                <circle r="3" opacity="0.6">
+                  <animateMotion dur="2s" repeatCount="indefinite" begin="0.8s"><mpath href="#p-auth-db"/></animateMotion></circle>
+
+                <circle r="3" opacity="0.7">
+                  <animateMotion dur="2.2s" repeatCount="indefinite" begin="1.5s"><mpath href="#p-q-ml"/></animateMotion></circle>
+
+                <circle r="3.5" opacity="0.95">
+                  <animateMotion dur="1.6s" repeatCount="indefinite" begin="0.6s"><mpath href="#p-db-cloud"/></animateMotion></circle>
+
+                <circle r="3.5" opacity="0.95">
+                  <animateMotion dur="1.6s" repeatCount="indefinite" begin="1.0s"><mpath href="#p-ml-cloud"/></animateMotion></circle>
+              </g>
+
+              <!-- Nodes -->
+              <g font-family="JetBrains Mono, monospace" text-anchor="middle">
+
+                <!-- Client (top — amber highlight, entry point) -->
+                <rect x="141" y="36" width="58" height="38" rx="8"
+                      fill="#1C2128" stroke="rgba(245,158,11,0.4)" stroke-width="1"/>
+                <text x="170" y="59" font-size="11" font-weight="500" fill="#F59E0B">Client</text>
+                <text x="170" y="90" font-size="8.5" fill="#8B949E">Browser / Mobile</text>
+
+                <!-- API Gateway -->
+                <rect x="141" y="111" width="58" height="38" rx="8"
+                      fill="#1C2128" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+                <text x="170" y="134" font-size="10.5" font-weight="500" fill="#E6EDF3">API GW</text>
+                <text x="170" y="165" font-size="8.5" fill="#8B949E">Gateway</text>
+
+                <!-- Auth / IAM -->
+                <rect x="36" y="196" width="58" height="38" rx="8"
+                      fill="#1C2128" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                <text x="65" y="219" font-size="10.5" font-weight="500" fill="#E6EDF3">Auth</text>
+                <text x="65" y="250" font-size="8.5" fill="#8B949E">IAM</text>
+
+                <!-- Microservices -->
+                <rect x="141" y="196" width="58" height="38" rx="8"
+                      fill="#1C2128" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+                <text x="170" y="219" font-size="10.5" font-weight="500" fill="#E6EDF3">SVC</text>
+                <text x="170" y="250" font-size="8.5" fill="#8B949E">Microservices</text>
+
+                <!-- Event Queue -->
+                <rect x="248" y="196" width="58" height="38" rx="8"
+                      fill="#1C2128" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                <text x="277" y="219" font-size="10.5" font-weight="500" fill="#E6EDF3">Queue</text>
+                <text x="277" y="250" font-size="8.5" fill="#8B949E">Events</text>
+
+                <!-- Data Layer -->
+                <rect x="51" y="286" width="58" height="38" rx="8"
+                      fill="#1C2128" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                <text x="80" y="309" font-size="10.5" font-weight="500" fill="#E6EDF3">DB</text>
+                <text x="80" y="340" font-size="8.5" fill="#8B949E">Data Layer</text>
+
+                <!-- AI / ML -->
+                <rect x="239" y="286" width="58" height="38" rx="8"
+                      fill="#1C2128" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                <text x="268" y="309" font-size="10.5" font-weight="500" fill="#E6EDF3">AI / ML</text>
+                <text x="268" y="340" font-size="8.5" fill="#8B949E">Inference</text>
+
+                <!-- Cloud Infra (bottom — amber highlight, exit point) -->
+                <rect x="141" y="366" width="58" height="38" rx="8"
+                      fill="#1C2128" stroke="rgba(245,158,11,0.4)" stroke-width="1"/>
+                <text x="170" y="389" font-size="10.5" font-weight="500" fill="#F59E0B">Cloud</text>
+                <text x="170" y="416" font-size="8.5" fill="#8B949E">Infrastructure</text>
+              </g>
+
+            </svg>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- .hero-inner -->
+
+    <a class="scroll-down" href="#about" aria-label="Scroll to about section">
+      <i class="fa-solid fa-chevron-down"></i>
+    </a>
+  </section>
+
+  <!-- ── About ──────────────────────────────────────────── -->
+  <section id="about" data-reveal>
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-number">01</span>
+        <h2 class="section-title">About Me</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-photo">
+          <img src="images/profile.png" alt="Your Name">
+        </div>
+
+        <div class="about-body">
+          <p class="about-bio">Solutions Architect with 8+ years of experience designing and delivering enterprise-grade cloud systems across financial services, healthcare, and SaaS. I partner with engineering and product leadership to translate complex business requirements into scalable, secure, and cost-effective architectures. Known for bridging technical depth with executive communication — equally comfortable in a whiteboard session with engineers and a quarterly business review with the C-suite.
+</p>
+
+          <dl class="facts-grid">
+            
+              <div class="fact-item">
+                <dt class="fact-label">Location</dt>
+                <dd class="fact-value">Lima, Peru</dd>
+              </div>
+            
+              <div class="fact-item">
+                <dt class="fact-label">Experience</dt>
+                <dd class="fact-value">8+ Years</dd>
+              </div>
+            
+              <div class="fact-item">
+                <dt class="fact-label">Specialization</dt>
+                <dd class="fact-value">Cloud Architecture</dd>
+              </div>
+            
+          </dl>
+        </div>
       </div>
     </div>
   </section>
 
-  <footer class="footer">
-    <p>&copy; Edgar Cirilo</p>
-    <p>Work in progress ☕</p>
+  <!-- ── Skills ─────────────────────────────────────────── -->
+  <section id="skills" data-reveal>
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-number">02</span>
+        <h2 class="section-title">Skills</h2>
+      </div>
+
+      <div class="skills-grid">
+        
+          <div class="skill-card">
+            <i class="skill-icon fa-solid fa-cloud"></i>
+            <h3 class="skill-category">Cloud Architecture</h3>
+            <p class="skill-desc">AWS, Azure, GCP multi-cloud design patterns and IaC</p>
+          </div>
+        
+          <div class="skill-card">
+            <i class="skill-icon fa-solid fa-diagram-project"></i>
+            <h3 class="skill-category">Solution Design</h3>
+            <p class="skill-desc">End-to-end architecture from requirements to delivery</p>
+          </div>
+        
+          <div class="skill-card">
+            <i class="skill-icon fa-solid fa-cubes"></i>
+            <h3 class="skill-category">Microservices</h3>
+            <p class="skill-desc">Domain-driven design, service mesh, event-driven systems</p>
+          </div>
+        
+          <div class="skill-card">
+            <i class="skill-icon fa-solid fa-shield-halved"></i>
+            <h3 class="skill-category">Security &amp; Compliance</h3>
+            <p class="skill-desc">Zero-trust, SOC 2, GDPR, cloud security posture</p>
+          </div>
+        
+          <div class="skill-card">
+            <i class="skill-icon fa-solid fa-database"></i>
+            <h3 class="skill-category">Data Architecture</h3>
+            <p class="skill-desc">Data lakes, streaming pipelines, analytical platforms</p>
+          </div>
+        
+          <div class="skill-card">
+            <i class="skill-icon fa-brands fa-docker"></i>
+            <h3 class="skill-category">DevOps &amp; CI/CD</h3>
+            <p class="skill-desc">Kubernetes, Terraform, GitOps, observability stacks</p>
+          </div>
+        
+          <div class="skill-card">
+            <i class="skill-icon fa-solid fa-people-group"></i>
+            <h3 class="skill-category">Stakeholder Communication</h3>
+            <p class="skill-desc">Translating technical complexity for C-suite audiences</p>
+          </div>
+        
+          <div class="skill-card">
+            <i class="skill-icon fa-solid fa-plug"></i>
+            <h3 class="skill-category">API Design</h3>
+            <p class="skill-desc">REST, GraphQL, AsyncAPI, gateway patterns</p>
+          </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Work / Resume ──────────────────────────────────── -->
+  <section id="resume" data-reveal>
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-number">03</span>
+        <h2 class="section-title">Work Experience</h2>
+      </div>
+
+      <div class="work-list">
+        
+          <div class="work-item" id="work-0">
+
+            <button class="work-row"
+                    aria-expanded="false"
+                    aria-controls="work-detail-0">
+              <div class="work-meta">
+                <span class="work-company">Acme Cloud Services</span>
+                <span class="work-role">Principal Solutions Architect</span>
+              </div>
+              <span class="work-dates">2022 – Present</span>
+              <i class="work-chevron fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </button>
+
+            <div class="work-detail" id="work-detail-0" hidden>
+              <ul class="work-bullets">
+                
+                  <li>Led cloud migration for 40+ enterprise clients onto AWS and Azure, cutting infrastructure costs by 35%</li>
+                
+                  <li>Designed multi-region active-active architecture serving 50M monthly active users</li>
+                
+                  <li>Established Architecture Review Board practices adopted across the organization</li>
+                
+              </ul>
+              <div class="work-tags">
+                
+                  <span class="tag">AWS</span>
+                
+                  <span class="tag">Azure</span>
+                
+                  <span class="tag">Terraform</span>
+                
+                  <span class="tag">Kubernetes</span>
+                
+                  <span class="tag">ArgoCD</span>
+                
+              </div>
+            </div>
+
+          </div>
+        
+          <div class="work-item" id="work-1">
+
+            <button class="work-row"
+                    aria-expanded="false"
+                    aria-controls="work-detail-1">
+              <div class="work-meta">
+                <span class="work-company">TechCorp Inc.</span>
+                <span class="work-role">Senior Solutions Architect</span>
+              </div>
+              <span class="work-dates">2019 – 2022</span>
+              <i class="work-chevron fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </button>
+
+            <div class="work-detail" id="work-detail-1" hidden>
+              <ul class="work-bullets">
+                
+                  <li>Designed event-driven microservices platform replacing a legacy monolith (8 services → 60)</li>
+                
+                  <li>Delivered SOC 2 Type II compliance architecture across three product lines</li>
+                
+                  <li>Mentored a team of 6 engineers on cloud-native design patterns</li>
+                
+              </ul>
+              <div class="work-tags">
+                
+                  <span class="tag">GCP</span>
+                
+                  <span class="tag">Kafka</span>
+                
+                  <span class="tag">Spring Boot</span>
+                
+                  <span class="tag">PostgreSQL</span>
+                
+                  <span class="tag">Istio</span>
+                
+              </div>
+            </div>
+
+          </div>
+        
+          <div class="work-item" id="work-2">
+
+            <button class="work-row"
+                    aria-expanded="false"
+                    aria-controls="work-detail-2">
+              <div class="work-meta">
+                <span class="work-company">StartupXYZ</span>
+                <span class="work-role">Software Architect</span>
+              </div>
+              <span class="work-dates">2016 – 2019</span>
+              <i class="work-chevron fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </button>
+
+            <div class="work-detail" id="work-detail-2" hidden>
+              <ul class="work-bullets">
+                
+                  <li>Built greenfield SaaS platform from 0 to 200k users in 18 months</li>
+                
+                  <li>Introduced CI/CD pipeline reducing release cycle from 2 weeks to daily</li>
+                
+                  <li>Architected real-time data pipeline processing 10M events per day</li>
+                
+              </ul>
+              <div class="work-tags">
+                
+                  <span class="tag">AWS</span>
+                
+                  <span class="tag">Node.js</span>
+                
+                  <span class="tag">React</span>
+                
+                  <span class="tag">MongoDB</span>
+                
+                  <span class="tag">GitHub Actions</span>
+                
+              </div>
+            </div>
+
+          </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Contact / Footer ───────────────────────────────── -->
+  <footer id="contact">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-number">04</span>
+        <h2 class="section-title">Get In Touch</h2>
+      </div>
+
+      <div class="contact-body">
+        <a href="mailto:yourname@example.com" class="contact-email">
+          yourname@example.com
+        </a>
+
+        <div class="contact-social">
+          <a href="https://www.linkedin.com/in/username" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/username" target="_blank" rel="noopener" aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://twitter.com/username" target="_blank" rel="noopener" aria-label="Twitter">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+          <a href="https://www.instagram.com/username" target="_blank" rel="noopener" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-tagline">Designed with precision. Built to last.</p>
+        <p class="footer-copy">&copy; 2026 Your Name</p>
+      </div>
+    </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
