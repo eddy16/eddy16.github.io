@@ -1,6 +1,6 @@
 # Edgar Cirilo — Personal Portfolio
 
-A minimal personal portfolio site built with Node.js, Express, and EJS. All content is driven by `config.yml`. Deploys as a static site to GitHub Pages via the `docs/` folder.
+A minimal personal portfolio site built with Node.js, Express, and EJS. All content is driven by `config.yml`. Deploys to GitHub Pages via the `gh-pages` npm package.
 
 ## Prerequisites
 
@@ -32,11 +32,13 @@ To update content: edit `config.yml`, then run `npm run build` again.
 
 ## Deploy to GitHub Pages
 
-1. Run `npm run build`
-2. Commit and push the `docs/` folder to the `master` branch
-3. In your GitHub repo go to **Settings → Pages**
-4. Set source to **Deploy from a branch**, branch: `master`, folder: `/docs`
-5. Your site will be live at `https://eddy16.github.io`
+```bash
+npm run deploy
+```
+
+This runs the build automatically (via `predeploy`) and then pushes the output to the `gh-pages` branch on GitHub, which GitHub Pages serves publicly.
+
+**One-time setup:** In your GitHub repo go to **Settings → Pages** and set source to **Deploy from a branch**, branch: `gh-pages`, folder: `/ (root)`. Your site will be live at `https://eddy16.github.io`.
 
 ## Customisation
 
