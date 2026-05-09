@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Antic+Slab&display=swap');
+
+/* ── Variables ─────────────────────────────────────────── */
+:root {
+  --main:  #1a222c;
+  --sec:   #4B5664;
+  --white: #ffffff;
+  --body:  #555;
+  --head:  #333;
+}
+
+/* ── Reset / base ──────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  line-height: 1.5;
+  color: var(--body);
+  font-family: 'Antic Slab', serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+article, aside, figcaption, figure, footer, header, nav, section {
+  display: block;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+  padding: 0.5em 0;
+  line-height: 1.25;
+  color: var(--head);
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1rem; }
+
+ul, ol {
+  margin: 1em 0;
+  padding-left: 30px;
+  font-size: 16px;
+}
+
+p {
+  margin: 1em 0;
+}
+
+a img {
+  border: none;
+}
+
+/* ── Hero ─────────────────────────────────────────────── */
+#particles-js {
+  background: var(--main);
+  display: flex;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative; /* containing block for .header and .down */
+}
+
+/* particles.js injects inline height based on offsetHeight; override it so
+   canvas fills the full hero even when min-height is used instead of height */
+#particles-js canvas.particles-js-canvas-el {
+  height: 100vh !important;
+}
+
+.header {
+  font-family: 'Montserrat', sans-serif;
+  z-index: 1;
+  text-align: center;
+  color: var(--white);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+}
+
+.site-title {
+  font-size: 50px;
+  display: block;
+  line-height: 1;
+  color: var(--white);
+}
+
+.site-description {
+  font-size: 20px;
+  display: block;
+  line-height: 1;
+  color: var(--white);
+  margin-top: 10px;
+}
+
+/* ── Social icon circles ───────────────────────────────── */
+.header-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.header-icons a {
+  outline: 0;
+  border: none;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+/* Scoped to .header-icons so styles don't bleed onto .down .icon */
+.header-icons .icon {
+  color: var(--white);
+  font-size: 18px;
+  padding: 12px;
+  margin: 5px;
+  border-radius: 50%;
+  border: 2px solid var(--white);
+  transition: all .5s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.header-icons .icon:hover,
+.header-icons .icon:active {
+  color: var(--main);
+  background: var(--white);
+}
+
+/* ── Nav links ────────────────────────────────────────── */
+.header-links {
+  margin: 10px;
+}
+
+.header-links .link {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 15px;
+  margin: 10px;
+}
+
+/* ── Chevron down ─────────────────────────────────────── */
+.down {
+  color: var(--white);
+  position: absolute;
+  bottom: 25px;
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-size: 30px;
+  line-height: 30px;
+  cursor: pointer;
+  outline: 0;
+  border: none;
+  text-decoration: none;
+  z-index: 1;
+}
+
+/* The icon is positioned absolutely inside .down and animated via the pulse
+   keyframe. The keyframe's `top` property overrides the CSS `top: 50%` on
+   every frame, creating the floating effect. */
+.down .icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  animation: pulse 1.3s infinite;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+}
+
+.down .icon:hover,
+.down .icon:active {
+  color: var(--sec);
+}
+
+/* ── Pulse animation ──────────────────────────────────── */
+@keyframes pulse {
+  from { opacity: .4; top: 0; }
+  50%  { opacity: 1;  top: -10px; }
+  to   { opacity: .4; top: 0; }
+}
+
+/* ── About section ────────────────────────────────────── */
+#about {
+  font-size: 120%;
+  width: 90%;
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+.user-details {
+  text-align: center;
+  margin: 5px auto;
+}
+
+.user-details h1 {
+  font-weight: 400;
+}
+
+.user {
+  text-align: center;
+  font-size: 60px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.user p {
+  font-size: 16px;
+  text-align: left;
+}
+
+.tech {
+  margin: 10px;
+  flex: 1 1 0;
+}
+
+/* ── Mobile layout (<768px) ───────────────────────────── */
+@media only screen and (max-width: 767px) {
+  .user {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tech {
+    width: 100%;
+    flex: none;
+  }
+
+  /* Photo column moves to top */
+  .tech:nth-child(2) {
+    order: -1;
+  }
+
+  .user p {
+    text-align: center;
+  }
+}
+
+.tech h2,
+.tech h3 {
+  font-weight: 400;
+}
+
+.circular--portrait {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.circular--portrait img {
+  width: 100%;
+  height: auto;
+  margin-top: -30px;
+}
+
+/* ── Footer ───────────────────────────────────────────── */
+.footer {
+  background: var(--main);
+  padding: 10px 0;
+  margin-top: 100px;
+  text-align: center;
+  color: var(--white);
+}
+
+.footer p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+/* ── Responsive (768px+) ──────────────────────────────── */
+@media only screen and (min-width: 768px) {
+  .site-title {
+    font-size: 76px;
+    margin: 0;
+  }
+
+  .site-description {
+    font-size: 34px;
+  }
+
+  .header-links .link {
+    font-size: 20px;
+  }
+
+  .header-icons .icon {
+    font-size: 22px;
+    padding: 14px;
+  }
+
+  #about {
+    width: 80%;
+  }
+
+  .user {
+    flex-wrap: nowrap;
+    font-size: 75px;
+  }
+}
