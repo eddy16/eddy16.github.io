@@ -1,14 +1,29 @@
 /* ── Design tokens ─────────────────────────────────────── */
 :root {
-  --bg:            #0D1117;
-  --bg-card:       #161B22;
-  --bg-card-hover: #1C2128;
-  --text:          #E6EDF3;
-  --text-muted:    #8B949E;
-  --accent:        #F59E0B;
-  --accent-dim:    rgba(245, 158, 11, 0.12);
-  --border:        rgba(255, 255, 255, 0.08);
-  --border-accent: rgba(245, 158, 11, 0.4);
+  /* Base / chrome */
+  --color-base:       #4A4E54;
+  --color-base-mid:   #6E7480;
+  --color-base-light: #9097A0;
+
+  /* Accent — electric cyan, use sparingly */
+  --color-accent:        #00D9FF;
+  --color-accent-dim:    rgba(0, 217, 255, 0.12);
+  --color-accent-border: rgba(0, 217, 255, 0.4);
+  --color-accent-glow:   rgba(0, 217, 255, 0.15);
+
+  /* Backgrounds */
+  --color-bg-deep:    #0D0F11;
+  --color-bg-surface: #13161A;
+  --color-bg-hover:   #191C22;
+
+  /* Text */
+  --color-text-primary:   #E8EAEE;
+  --color-text-secondary: #A8AEB8;
+  --color-text-muted:     #4A4E54;
+
+  /* Borders */
+  --color-border:        rgba(74, 78, 84, 0.4);
+  --color-border-accent: rgba(0, 217, 255, 0.4);
 
   --font-display: 'Space Grotesk', sans-serif;
   --font-body:    'Inter', sans-serif;
@@ -29,8 +44,8 @@ html {
 
 body {
   margin: 0;
-  background: var(--bg);
-  color: var(--text);
+  background: var(--color-bg-deep);
+  color: var(--color-text-primary);
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.6;
@@ -90,7 +105,7 @@ dl {
 .section-number {
   font-family: var(--font-mono);
   font-size: clamp(3rem, 6vw, 5rem);
-  color: var(--accent-dim);
+  color: var(--color-accent-dim);
   line-height: 1;
   user-select: none;
   flex-shrink: 0;
@@ -100,7 +115,7 @@ dl {
   font-family: var(--font-display);
   font-size: clamp(1.5rem, 3vw, 2.25rem);
   font-weight: 700;
-  color: var(--text);
+  color: var(--color-text-primary);
 }
 
 /* ── Nav ───────────────────────────────────────────────── */
@@ -119,17 +134,17 @@ dl {
 }
 
 #nav.nav-scrolled {
-  background: rgba(13, 17, 23, 0.92);
+  background: rgba(13, 15, 17, 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .nav-brand {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1rem;
-  color: var(--accent);
+  color: var(--color-accent);
   transition: opacity 0.2s ease;
 }
 
@@ -149,14 +164,14 @@ dl {
 .nav-links a {
   font-family: var(--font-mono);
   font-size: 0.8rem;
-  color: var(--text-muted);
+  color: var(--color-text-secondary);
   transition: color 0.2s ease;
   letter-spacing: 0.02em;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--accent);
+  color: var(--color-accent);
 }
 
 /* ── Hero ─────────────────────────────────────────────── */
@@ -167,7 +182,7 @@ dl {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: var(--bg);
+  background: var(--color-bg-deep);
 }
 
 /* CSS-only animated dot grid — no canvas, no JS */
@@ -175,7 +190,7 @@ dl {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, rgba(245, 158, 11, 0.2) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(0, 217, 255, 0.2) 1px, transparent 1px);
   background-size: 32px 32px;
   animation: grid-pan 40s linear infinite;
   pointer-events: none;
@@ -187,7 +202,7 @@ dl {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at center, transparent 40%, rgba(13, 17, 23, 0.7) 100%);
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(13, 15, 17, 0.7) 100%);
   pointer-events: none;
   z-index: 0;
 }
@@ -218,7 +233,7 @@ dl {
 .hero-label {
   font-family: var(--font-mono);
   font-size: 0.875rem;
-  color: var(--accent);
+  color: var(--color-accent);
   letter-spacing: 0.15em;
   text-transform: uppercase;
   margin-bottom: 16px;
@@ -228,14 +243,14 @@ dl {
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 8vw, 5rem);
   font-weight: 700;
-  color: var(--text);
+  color: var(--color-text-primary);
   line-height: 1.05;
   margin-bottom: 20px;
 }
 
 .hero-summary {
   font-size: clamp(1rem, 2vw, 1.125rem);
-  color: var(--text-muted);
+  color: var(--color-text-secondary);
   max-width: 520px;
   margin: 0 0 40px;
   line-height: 1.75;
@@ -262,25 +277,25 @@ dl {
 }
 
 .btn-primary {
-  background: var(--accent);
-  color: #0D1117;
-  border-color: var(--accent);
+  background: var(--color-accent);
+  color: var(--color-bg-deep);
+  border-color: var(--color-accent);
 }
 
 .btn-primary:hover {
   background: transparent;
-  color: var(--accent);
+  color: var(--color-accent);
 }
 
 .btn-outline {
   background: transparent;
-  color: var(--text);
-  border-color: var(--border);
+  color: var(--color-text-primary);
+  border-color: var(--color-border);
 }
 
 .btn-outline:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
 }
 
 /* Hero social icons */
@@ -291,13 +306,13 @@ dl {
 }
 
 .hero-social a {
-  color: var(--text-muted);
+  color: var(--color-text-secondary);
   font-size: 1.25rem;
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .hero-social a:hover {
-  color: var(--accent);
+  color: var(--color-accent);
   transform: translateY(-3px);
 }
 
@@ -309,14 +324,14 @@ dl {
 }
 
 .arch-panel {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
   border-radius: 12px;
   overflow: hidden;
   width: 100%;
   max-width: 380px;
   box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5),
-              0 0 0 1px rgba(245, 158, 11, 0.05);
+              0 0 0 1px rgba(0, 217, 255, 0.05);
 }
 
 .arch-panel-header {
@@ -325,7 +340,7 @@ dl {
   gap: 10px;
   padding: 10px 16px;
   background: rgba(0, 0, 0, 0.3);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .arch-panel-dots {
@@ -348,7 +363,7 @@ dl {
 .arch-panel-title {
   font-family: var(--font-mono);
   font-size: 0.7rem;
-  color: var(--text-muted);
+  color: var(--color-text-secondary);
   letter-spacing: 0.05em;
 }
 
@@ -369,14 +384,14 @@ dl {
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
-  color: var(--text-muted);
+  color: var(--color-text-secondary);
   font-size: 1.25rem;
   animation: chevron-bounce 2.2s ease-in-out infinite;
   transition: color 0.2s ease;
 }
 
 .scroll-down:hover {
-  color: var(--accent);
+  color: var(--color-accent);
 }
 
 @keyframes chevron-bounce {
@@ -386,7 +401,7 @@ dl {
 
 /* ── About ────────────────────────────────────────────── */
 #about {
-  background: var(--bg);
+  background: var(--color-bg-deep);
 }
 
 .about-grid {
@@ -401,11 +416,11 @@ dl {
   height: 240px;
   object-fit: cover;
   border-radius: 12px;
-  border: 2px solid var(--border);
+  border: 2px solid var(--color-border);
 }
 
 .about-bio {
-  color: var(--text-muted);
+  color: var(--color-text-secondary);
   font-size: 1.0625rem;
   line-height: 1.85;
   margin-bottom: 32px;
@@ -418,8 +433,8 @@ dl {
 }
 
 .fact-item {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
   border-radius: 8px;
   padding: 16px;
 }
@@ -427,7 +442,7 @@ dl {
 .fact-label {
   font-family: var(--font-mono);
   font-size: 0.6875rem;
-  color: var(--accent);
+  color: var(--color-accent);
   text-transform: uppercase;
   letter-spacing: 0.12em;
   display: block;
@@ -436,14 +451,14 @@ dl {
 
 .fact-value {
   font-size: 0.9375rem;
-  color: var(--text);
+  color: var(--color-text-primary);
   font-weight: 500;
   display: block;
 }
 
 /* ── Skills ───────────────────────────────────────────── */
 #skills {
-  background: var(--bg-card);
+  background: var(--color-bg-surface);
 }
 
 .skills-grid {
@@ -453,8 +468,8 @@ dl {
 }
 
 .skill-card {
-  background: var(--bg);
-  border: 1px solid var(--border);
+  background: var(--color-bg-deep);
+  border: 1px solid var(--color-border);
   border-radius: 10px;
   padding: 24px;
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
@@ -462,13 +477,13 @@ dl {
 
 .skill-card:hover {
   transform: translateY(-4px);
-  border-color: var(--border-accent);
-  box-shadow: 0 0 24px var(--accent-dim);
+  border-color: var(--color-border-accent);
+  box-shadow: 0 0 0 1px var(--color-accent-glow), 0 0 24px var(--color-accent-dim);
 }
 
 .skill-icon {
   font-size: 1.75rem;
-  color: var(--accent);
+  color: var(--color-accent);
   display: block;
   margin-bottom: 14px;
 }
@@ -477,29 +492,29 @@ dl {
   font-family: var(--font-display);
   font-size: 1rem;
   font-weight: 700;
-  color: var(--text);
+  color: var(--color-text-primary);
   margin-bottom: 8px;
 }
 
 .skill-desc {
   font-size: 0.875rem;
-  color: var(--text-muted);
+  color: var(--color-text-secondary);
   line-height: 1.55;
 }
 
 /* ── Work / Resume accordion ──────────────────────────── */
 #resume {
-  background: var(--bg);
+  background: var(--color-bg-deep);
 }
 
 .work-list {
-  border: 1px solid var(--border);
+  border: 1px solid var(--color-border);
   border-radius: 10px;
   overflow: hidden;
 }
 
 .work-item {
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .work-item:last-child {
@@ -508,7 +523,7 @@ dl {
 
 .work-row {
   width: 100%;
-  background: var(--bg-card);
+  background: var(--color-bg-surface);
   border: none;
   display: flex;
   align-items: center;
@@ -520,11 +535,11 @@ dl {
 }
 
 .work-row:hover {
-  background: var(--bg-card-hover);
+  background: var(--color-bg-hover);
 }
 
 .work-row:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--color-accent);
   outline-offset: -2px;
 }
 
@@ -540,24 +555,24 @@ dl {
   font-family: var(--font-display);
   font-size: 1rem;
   font-weight: 700;
-  color: var(--text);
+  color: var(--color-text-primary);
 }
 
 .work-role {
   font-size: 0.875rem;
-  color: var(--text-muted);
+  color: var(--color-text-secondary);
 }
 
 .work-dates {
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  color: var(--text-muted);
+  color: var(--color-text-secondary);
   white-space: nowrap;
   flex-shrink: 0;
 }
 
 .work-chevron {
-  color: var(--text-muted);
+  color: var(--color-text-secondary);
   font-size: 0.8125rem;
   flex-shrink: 0;
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s ease;
@@ -565,12 +580,12 @@ dl {
 
 .work-item.is-open .work-chevron {
   transform: rotate(180deg);
-  color: var(--accent);
+  color: var(--color-accent);
 }
 
 .work-item.is-open .work-row {
-  background: var(--bg-card-hover);
-  border-bottom: 1px solid var(--border-accent);
+  background: var(--color-bg-hover);
+  border-bottom: 1px solid var(--color-border-accent);
 }
 
 /* Accordion panel — max-height transition trick */
@@ -578,7 +593,7 @@ dl {
   overflow: hidden;
   max-height: 0;
   padding: 0 24px;
-  background: var(--bg);
+  background: var(--color-bg-deep);
   transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
               padding    0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -602,7 +617,7 @@ dl {
 }
 
 .work-bullets li {
-  color: var(--text-muted);
+  color: var(--color-text-secondary);
   font-size: 0.9375rem;
   padding-left: 18px;
   position: relative;
@@ -617,7 +632,7 @@ dl {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: var(--accent);
+  background: var(--color-accent);
   flex-shrink: 0;
 }
 
@@ -630,9 +645,9 @@ dl {
 .tag {
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  color: var(--accent);
-  background: var(--accent-dim);
-  border: 1px solid var(--border-accent);
+  color: var(--color-accent);
+  background: var(--color-accent-dim);
+  border: 1px solid var(--color-border-accent);
   border-radius: 4px;
   padding: 3px 10px;
   letter-spacing: 0.02em;
@@ -640,8 +655,8 @@ dl {
 
 /* ── Contact / Footer ─────────────────────────────────── */
 #contact {
-  background: var(--bg-card);
-  border-top: 1px solid var(--border);
+  background: var(--color-bg-surface);
+  border-top: 1px solid var(--color-border);
 }
 
 .contact-body {
@@ -656,14 +671,14 @@ dl {
   font-family: var(--font-display);
   font-size: clamp(1.25rem, 3vw, 2rem);
   font-weight: 700;
-  color: var(--text);
-  border-bottom: 2px solid var(--accent);
+  color: var(--color-text-primary);
+  border-bottom: 2px solid var(--color-accent);
   padding-bottom: 4px;
   transition: color 0.2s ease;
 }
 
 .contact-email:hover {
-  color: var(--accent);
+  color: var(--color-accent);
 }
 
 .contact-social {
@@ -672,18 +687,18 @@ dl {
 }
 
 .contact-social a {
-  color: var(--text-muted);
+  color: var(--color-text-secondary);
   font-size: 1.5rem;
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .contact-social a:hover {
-  color: var(--accent);
+  color: var(--color-accent);
   transform: translateY(-3px);
 }
 
 .footer-bottom {
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--color-border);
   padding-top: 28px;
   display: flex;
   flex-direction: column;
@@ -694,13 +709,12 @@ dl {
 .footer-tagline {
   font-family: var(--font-mono);
   font-size: 0.8125rem;
-  color: var(--text-muted);
+  color: var(--color-text-secondary);
 }
 
 .footer-copy {
   font-size: 0.8125rem;
-  color: var(--text-muted);
-  opacity: 0.5;
+  color: var(--color-text-muted);
 }
 
 /* ── Scroll reveal ─────────────────────────────────────── */
@@ -805,3 +819,15 @@ dl {
     margin-bottom: 36px;
   }
 }
+
+/* ── Text selection ────────────────────────────────────── */
+::selection {
+  background: rgba(0, 217, 255, 0.2);
+  color: #E8EAEE;
+}
+
+/* ── Scrollbar ─────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 8px; }
+::-webkit-scrollbar-track { background: var(--color-bg-deep); }
+::-webkit-scrollbar-thumb { background: var(--color-base); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-base-mid); }
