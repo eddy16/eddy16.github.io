@@ -343,11 +343,15 @@
             <div class="work-detail" id="work-detail-0" hidden>
               <ul class="work-bullets">
                 
-                  <li>Led cloud migration for 40+ enterprise clients onto AWS and Azure, cutting infrastructure costs by 35%</li>
+                  <li>Scaled the payment ecosystem from 2M to 5M daily transactions, leading architecture-level performance optimizations including service decomposition, database sharding, connection pool tuning, and caching strategies — while integrating additional payment rails to expand platform coverage across new financial networks and settlement channels</li>
                 
-                  <li>Designed multi-region active-active architecture serving 50M monthly active users</li>
+                  <li>Designed the migration to a multi-region active-active architecture on GCP, eliminating single-region failure risk, enabling geographic traffic distribution, and ensuring transactional consistency across regions through conflict-resolution patterns and cross-region data replication strategies</li>
                 
-                  <li>Established Architecture Review Board practices adopted across the organization</li>
+                  <li>Established a formal Architecture Assessment process across the platform organization, implementing structured reviews for all major changes — evaluating blast radius, backward compatibility, performance impact, and operational readiness — to prevent architectural gaps from reaching production</li>
+                
+                  <li>Designed the reporting and analytics data platform processing the combined data output of both the Payments and Alias systems, architecting ETL and streaming pipelines using GCP Dataflow for real-time ingestion, Dataform for transformation and data modeling, and BigQuery as the analytical warehouse — enabling business intelligence, reconciliation, and operational dashboards at scale</li>
+                
+                  <li>Operate in a strategic architecture role with cross-platform ownership, driving technical roadmap decisions across Payments, Alias, and Data — evaluating trade-offs on infrastructure investment, multi-region expansion sequencing, and platform convergence to align engineering execution with business growth objectives</li>
                 
               </ul>
               <div class="work-tags">
@@ -383,11 +387,13 @@
             <div class="work-detail" id="work-detail-1" hidden>
               <ul class="work-bullets">
                 
-                  <li>Designed event-driven microservices platform replacing a legacy monolith (8 services → 60)</li>
+                  <li>Led the delivery of the next-generation payment ecosystem, scaling the platform from 1M to 2M daily transactions by redesigning critical service paths, optimizing data access patterns, and introducing performance-oriented capacity planning — doubling throughput without proportional infrastructure cost increase</li>
                 
-                  <li>Delivered SOC 2 Type II compliance architecture across three product lines</li>
+                  <li>Established engineering-wide technical standards for the platform, defining and enforcing coding guidelines for Spring Boot services, mandating Hexagonal Architecture (Ports &amp; Adapters) for domain isolation, and embedding clean code principles through automated linting, and peer review gates</li>
                 
-                  <li>Mentored a team of 6 engineers on cloud-native design patterns</li>
+                  <li>Built and mentored a high-performing team of 6 backend engineers on cloud-native and distributed systems patterns — including circuit breakers, eventual consistency, saga orchestration, and observability-first design — elevating the team&#39;s ability to independently own, deploy, and operate production services</li>
+                
+                  <li>Partnered with product and engineering leadership to define the platform roadmap, translating business growth targets (2x transaction volume) into concrete technical milestones, infrastructure requirements, and team capacity plans</li>
                 
               </ul>
               <div class="work-tags">
@@ -423,11 +429,13 @@
             <div class="work-detail" id="work-detail-2" hidden>
               <ul class="work-bullets">
                 
-                  <li>Built greenfield SaaS platform from 0 to 200k users in 18 months</li>
+                  <li>Architected and built a cloud-native payment ecosystem on Google Cloud Platform, delivering a suite of Aliases and Payments APIs that enabled real-time transactions across multiple financial institutions</li>
                 
-                  <li>Introduced CI/CD pipeline reducing release cycle from 2 weeks to daily</li>
+                  <li>Engineered the entire backend on a reactive, non-blocking stack using Spring Boot with Project Reactor (WebFlux), achieving high concurrency with minimal thread overhead — critical for sustaining throughput during peak payroll-cycle bursts without horizontal over-provisioning</li>
                 
-                  <li>Architected real-time data pipeline processing 10M events per day</li>
+                  <li>Achieved P95 latency under 1 second for end-to-end payment processing and sub-200ms P95 for account lifecycle management operations (registration, linking, status transitions), validated through continuous performance testing under production-equivalent load</li>
+                
+                  <li>Designed a purpose-driven data architecture: MongoDB for the Aliases domain (flexible schema for account mappings and management) and Cloud SQL (MySQL) for transactional payment records requiring ACID guarantees and relational integrity</li>
                 
               </ul>
               <div class="work-tags">
@@ -463,11 +471,15 @@
             <div class="work-detail" id="work-detail-3" hidden>
               <ul class="work-bullets">
                 
-                  <li>Built greenfield SaaS platform from 0 to 200k users in 18 months</li>
+                  <li>Designed the end-to-end microservices architecture for a high-throughput payments platform processing payroll-deduction transactions, defining service boundaries, data ownership, and inter-service communication patterns from the ground up</li>
                 
-                  <li>Introduced CI/CD pipeline reducing release cycle from 2 weeks to daily</li>
+                  <li>Achieved sub-1-second P99 latency across all critical payment flows on bare-metal infrastructure — engineering for performance at the hardware level without cloud auto-scaling, through JVM tuning, connection pool optimization, and lightweight service design</li>
                 
-                  <li>Architected real-time data pipeline processing 10M events per day</li>
+                  <li>Implemented a dual-framework strategy, using Dropwizard for latency-sensitive, high-throughput payment processing services and Spring Boot + Spring Cloud for orchestration and business-logic services — optimizing resource footprint per service based on workload profile</li>
+                
+                  <li>Architected a polyglot persistence layer purpose-built for payments: Apache Cassandra for high-availability, partition-tolerant transaction records; MongoDB for flexible document-oriented data (merchant profiles, deduction rules); and Apache Kafka for real-time event streaming, audit trails, and cross-service eventual consistency</li>
+                
+                  <li>Containerized all services with Docker and orchestrated deployments via Docker Swarm, implementing custom health checks, resource-aware thread pool sizing, and rolling update strategies — maximizing throughput within fixed bare-metal compute without relying on cloud-managed orchestration (EKS, GKE, AKS)</li>
                 
               </ul>
               <div class="work-tags">
@@ -503,11 +515,13 @@
             <div class="work-detail" id="work-detail-4" hidden>
               <ul class="work-bullets">
                 
-                  <li>Built greenfield SaaS platform from 0 to 200k users in 18 months</li>
+                  <li>Designed and implemented a microservices architecture for an insurance quotation engine using Spring Boot and Spring Cloud (Eureka, Config Server, Zuul/Gateway, Hystrix), enabling real-time multi-carrier quote comparison and dynamic premium calculation across product lines</li>
                 
-                  <li>Introduced CI/CD pipeline reducing release cycle from 2 weeks to daily</li>
+                  <li>Architected the backend for a core banking system, decomposing monolithic workflows into domain-driven microservices with RESTful APIs, improving system modularity and enabling independent deployment cycles per service</li>
                 
-                  <li>Architected real-time data pipeline processing 10M events per day</li>
+                  <li>Containerized and deployed all microservices on OpenShift, establishing CI/CD pipelines for automated builds, testing, and rolling deployments across development, staging, and production environments</li>
+                
+                  <li>Served as principal technical authority across both product lines, leading architectural decisions, conducting design reviews, and mentoring backend developers on distributed systems patterns and Spring Cloud best practices</li>
                 
               </ul>
               <div class="work-tags">
@@ -543,11 +557,11 @@
             <div class="work-detail" id="work-detail-5" hidden>
               <ul class="work-bullets">
                 
-                  <li>Built greenfield SaaS platform from 0 to 200k users in 18 months</li>
+                  <li>Developed end-to-end B2B transaction portal for private banking clients, designing both the Spring MVC/Spring Web Flow backend and the Thymeleaf + AngularJS frontend, enabling secure multi-party transaction workflows</li>
                 
-                  <li>Introduced CI/CD pipeline reducing release cycle from 2 weeks to daily</li>
+                  <li>Built the Payroll Portability platform from the ground up, implementing RESTful services in Java (Servlets, Spring MVC) with a dynamic frontend layer using AngularJS and jQuery to support employee onboarding and payroll migration flows</li>
                 
-                  <li>Architected real-time data pipeline processing 10M events per day</li>
+                  <li>Delivered production-ready MVPs for both platforms within a 6-month timeline, meeting all stakeholder deadlines and accelerating time-to-market for two concurrent product lines</li>
                 
               </ul>
               <div class="work-tags">
