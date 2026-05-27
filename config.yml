@@ -117,9 +117,10 @@ work:
     role: "Software Architect"
     dates: "2016 – 2019"
     details:
-      - "Built greenfield SaaS platform from 0 to 200k users in 18 months"
-      - "Introduced CI/CD pipeline reducing release cycle from 2 weeks to daily"
-      - "Architected real-time data pipeline processing 10M events per day"
+      - "Developed end-to-end B2B transaction portal for private banking clients, designing both the Spring MVC/Spring Web Flow backend and the Thymeleaf + AngularJS frontend, enabling secure multi-party transaction workflows"
+      - "Built the Payroll Portability platform from the ground up, implementing RESTful services in Java (Servlets, Spring MVC) with a dynamic frontend layer using AngularJS and jQuery to support employee onboarding and payroll migration flows"
+      - "Delivered production-ready MVPs for both platforms within a 6-month timeline, meeting all stakeholder deadlines and accelerating time-to-market for two concurrent product lines"
+      - "Collaborated cross-functionally with product, QA, and business stakeholders to define requirements, prioritize sprint backlogs, and validate deliverables against business acceptance criteria"
     tech:
       - "AWS"
       - "Node.js"
