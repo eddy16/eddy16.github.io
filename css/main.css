@@ -792,6 +792,11 @@ dl {
     order: 3;
     font-size: 0.6875rem;
   }
+
+  .work-item.is-open .work-detail {
+    max-height: 55vh;
+    overflow-y: auto;
+  }
 }
 
 /* ── Responsive: mobile (≤480px) ───────────────────────── */
